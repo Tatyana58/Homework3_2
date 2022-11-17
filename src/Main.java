@@ -16,10 +16,10 @@ public class Main {
         //А для Android так:
         //«Установите версию приложения для Android по ссылке».
         byte clientOS = 0;//0 — iOS, 1 — Android
-        if (clientOS==1){
+        if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке ...");
-        }else {
-        System.out.println("Установите версию приложения для iOS по ссылке ..... ");
+        } else {
+            System.out.println("Установите версию приложения для iOS по ссылке ..... ");
         }
         System.out.println(" ");
 
@@ -39,14 +39,14 @@ public class Main {
         //При этом для пользователей с телефоном с 2015 года выпуска нужно вывести обычное предложение об установке приложения.
         //Для обозначения года создания используйте переменную clientDeviceYear, где необходимо указать 2015 год.
         //Важно: вложенность больше двух этажей не допускается (условный оператор внутри условного оператора).
-        short clientDeviceYear= 2015;
-        if (clientOS==1) {
-            if (clientDeviceYear>= 2015) {
+        short clientDeviceYear = 2015;
+        if (clientOS == 1) {
+            if (clientDeviceYear >= 2015) {
                 System.out.println("Установите версию приложения для Android по ссылке ...");
             } else System.out.println("Установите облегченную версию приложения для Android по ссылке...");
-        }else if (clientDeviceYear>=2015){
+        } else if (clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для iOS по ссылке ..... ");
-            }else System.out.println("Установите облегченную версию приложения для iOS по ссылке...");
+        } else System.out.println("Установите облегченную версию приложения для iOS по ссылке...");
         System.out.println(" ");
 
         System.out.println("Задание 3");
@@ -57,10 +57,10 @@ public class Main {
         //« …. год является високосным». или  «... год не является високосным».
         //Небольшая справка: високосным является каждый четвертый год, но не является каждый сотый.
         //Также високосным является каждый четырехсотый год.
-        int year=2021; //интересующий нас год
-        if (year%4==0) {
+        int year = 2024; //интересующий нас год
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " год является високосным.");
-        }else System.out.println(year + " год НЕ является високосным.");
+        } else System.out.println(year + " год НЕ является високосным.");
         System.out.println(" ");
 
         System.out.println("Задание 4");
@@ -76,10 +76,34 @@ public class Main {
         //Напишите программу, которая выдает сообщение в консоль:
         //"Потребуется дней: " + срок доставки
         //Объявите целочисленную переменную deliveryDistance = 95, которая содержит дистанцию до клиента.
-        short deliveryDistance =200;
-        int deliveryTime=1+(deliveryDistance+20)/40;
+        System.out.println("Задание 4 - 1 вариант");
+        short deliveryDistance = 200;
+        int deliveryTime = 1 + (deliveryDistance + 20) / 40;
+        int deliveryDay = 1;
         System.out.println("Потребуется дней : " + deliveryTime);
         System.out.println(" ");
+        System.out.println("Задание 4 - 2 вариант");
+        if (deliveryDistance > 20) {
+            deliveryDay++;
+        }
+        if (deliveryDistance > 60) {
+            deliveryDay++;
+        }
+        if (deliveryDistance > 100) {
+            deliveryDay++;
+        }
+        if (deliveryDistance > 140) {
+            deliveryDay++;
+        }
+        if (deliveryDistance > 180) {
+            deliveryDay++;
+        }
+        if (deliveryDistance > 220) {
+            deliveryDay++;
+        }
+        System.out.println("Потребуется дней : "+deliveryDay);
+        System.out.println(" ");
+
 
         System.out.println("Задание 5");
         //Задание 5
