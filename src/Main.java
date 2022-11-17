@@ -58,8 +58,7 @@ public class Main {
         //Небольшая справка: високосным является каждый четвертый год, но не является каждый сотый.
         //Также високосным является каждый четырехсотый год.
         int year=2021; //интересующий нас год
-        byte period=4; //период високосного года (каждые 4 года)
-        float leapYear=year%period;
+        float leapYear=year%4;
         if (leapYear==0) {
             System.out.println(year + " год является високосным.");
         }else System.out.println(year + " год НЕ является високосным.");
@@ -78,15 +77,9 @@ public class Main {
         //Напишите программу, которая выдает сообщение в консоль:
         //"Потребуется дней: " + срок доставки
         //Объявите целочисленную переменную deliveryDistance = 95, которая содержит дистанцию до клиента.
-        byte deliveryDistance = 95;
-        byte deliveryTime=1;
-        if (deliveryDistance<20){
-            System.out.println("Потребуется дней: " + deliveryTime);
-        }else if (deliveryDistance>=20&&deliveryDistance<60) {
-            System.out.println("Потребуется дней: " + (deliveryTime+1));
-        }else if (deliveryDistance>=60&&deliveryDistance<100){
-            System.out.println("Потребуется дней: " + (deliveryTime+2));
-        }
+        short deliveryDistance =200;
+        int deliveryTime=1+(deliveryDistance+20)/40;
+        System.out.println("Потребуется дней : " + deliveryTime);
         System.out.println(" ");
 
         System.out.println("Задание 5");
@@ -96,31 +89,23 @@ public class Main {
         //Для написания программы используйте оператор switch.
         // Для обозначения номера месяца используйте переменную monthNumber = 12.
         //Пропишите условие, при котором программа не будет выполняться (номер месяца больше 13).
-        int monthNumber = 12;
+        int monthNumber = 5;
         switch (monthNumber) {
-            case 1: System.out.println("Зима");
-                break;
+            case 12:
+            case 1:
             case 2: System.out.println("Зима");
                 break;
-            case 3: System.out.println("Весна");
-                break;
-            case 4: System.out.println("Весна");
-                break;
+            case 3:
+            case 4:
             case 5: System.out.println("Весна");
                 break;
-            case 6: System.out.println("Лето");
-                break;
-            case 7: System.out.println("Лето");
-                break;
+            case 6:
+            case 7:
             case 8: System.out.println("Лето");
                 break;
-            case 9: System.out.println("Осень");
-                break;
-            case 10: System.out.println("Осень");
-                break;
+            case 9:
+            case 10:
             case 11: System.out.println("Осень");
-                break;
-            case 12: System.out.println("Зима");
                 break;
             default:System.out.println("Такого месяца в году нет!");
                 break;
