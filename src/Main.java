@@ -58,8 +58,7 @@ public class Main {
         //Небольшая справка: високосным является каждый четвертый год, но не является каждый сотый.
         //Также високосным является каждый четырехсотый год.
         int year=2021; //интересующий нас год
-        float leapYear=year%4;
-        if (leapYear==0) {
+        if (year%4==0) {
             System.out.println(year + " год является високосным.");
         }else System.out.println(year + " год НЕ является високосным.");
         System.out.println(" ");
